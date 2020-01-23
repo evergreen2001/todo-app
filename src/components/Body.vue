@@ -19,12 +19,11 @@
                    </form>
                      <transition-group name="fade">
 
-<div class="card-panel" v-for="(todo, index) in todos" :key="index" >
+<div class="card-panel black white-text" v-for="(todo, index) in todos" :key="index" >
 
-{{todo.task}} <i class="material-icons right" @click="removeTodo">menu </i>
+{{todo.task}} <i class="material-icons right" @click="removeTodo">cancel </i>
 </div>
                      </transition-group>
-
 
 
 
@@ -36,7 +35,8 @@
 export default {
     data() {
      return {
-
+name:'',
+age:'',
 idForTodo:3,
       newTodo:'',
      todos:[ 
@@ -72,15 +72,25 @@ done:false
   
      },
      removeTodo(index){
-this.todos.splice(index,1)
+this.todos.splice(index,1)}
+,
+// swapName(){
 
-     }
-    },
+// return this.$store.state.name = this.name;
+// return this.$store.state.age = this.age
+
+
+//     }
+
+}
 }
 </script>
 
 <style scoped>
+i:hover{
 
+      color:red;
+}
 
 i {
 
